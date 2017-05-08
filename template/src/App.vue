@@ -22,13 +22,26 @@ export default {
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
 
+<style lang="less">
+  @import '~vux/src/styles/reset.less';
+  @import '~vux/src/styles/1px.less';
+  @import '~vux/src/styles/tap.less';
+
+</style>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body {
+    background-color: #fbf9fe;
+  }
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  #app{
+    height:100%;
+    width: 100%;
+    overflow-x: hidden;
+    text-align: center;
+  }
 </style>

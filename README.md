@@ -1,3 +1,9 @@
+
+# 基于vue-webpack-template 构建
+
+# Vue + Vux + webpack
+
+
 # vue-webpack-boilerplate
 
 > A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.

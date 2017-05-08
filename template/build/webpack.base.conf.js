@@ -2,12 +2,14 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const vuxLoader = require('vux-loader');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-module.exports = {
+const webpackConfig = {
   entry: {
     app: './src/main.js'
   },
@@ -51,7 +53,19 @@ module.exports = {
         include: [resolve('src'), resolve('test')]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style!css'),
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style!css!sass'),
+      },
+      {
+        test: /\.less/,
+        loader: ExtractTextPlugin.extract('style!css!less'),
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|icon)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
@@ -59,7 +73,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
@@ -69,3 +83,7 @@ module.exports = {
     ]
   }
 }
+
+module.exports = vuxLoader.merge(webpackConfig, {
+  plugins: ['vux-ui']
+})
