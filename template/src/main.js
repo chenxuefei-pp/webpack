@@ -9,6 +9,7 @@ import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/router}}
 
 import './vux-plugin'
+import './axios'
 
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 

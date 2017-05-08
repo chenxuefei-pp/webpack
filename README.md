@@ -1,8 +1,7 @@
 
-# 基于vue-webpack-template 构建
+## 基于vue-webpack-template 构建
 
-# Vue + Vux + webpack
-
+## Vue + Vux + webpack
 
 # vue-webpack-boilerplate
 

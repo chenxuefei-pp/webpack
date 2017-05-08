@@ -22,6 +22,10 @@ export default {
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
 
+<style lang="scss">
+  @import 'assets/style/base.scss';
+</style>
+
 <style lang="less">
   @import '~vux/src/styles/reset.less';
   @import '~vux/src/styles/1px.less';
